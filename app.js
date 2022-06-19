@@ -5,16 +5,18 @@ const app = express();
 const PORT = 5050;
 
 //routes
-import dataRoutes from "./routes/data.route.js";
+import transactsRouter from "./routes/transacts.route";
 
 app.use(cors());
 app.use(corsFunction);
-app.use(json({
-  limit: '5000mb'
-}));
-app.use(urlencoded({extended: true}));
+app.use(
+  json({
+    limit: "5000mb",
+  })
+);
+app.use(urlencoded({ extended: true }));
 
-app.use(dataRoutes)
+app.use(transactsRouter);
 
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
