@@ -2,10 +2,10 @@ import express, { json, urlencoded } from "express";
 import cors from "cors";
 import { corsFunction } from "./utils/cors.js";
 const app = express();
-const PORT = 5050;
+const PORT = 3000;
 
 //routes
-import transactsRouter from "./routes/transacts.route";
+import transactsRouter from "./routes/transacts.route.js";
 
 app.use(cors());
 app.use(corsFunction);
